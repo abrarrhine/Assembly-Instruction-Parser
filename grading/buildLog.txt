@@ -1,0 +1,39 @@
+Executing gradeC02.sh...
+
+Creating build subdirectory
+
+Copying student source file to tempFiles:
+ASMParser.c
+ParseResult.c
+opCode.c
+opCode.h
+register.c
+register.h
+Unpacking the grading code to the build directory:
+ASMParser.h
+ParseResult.h
+c01driver.c
+Grader.h
+Grader.o
+Generate.h
+Generate.o
+Note:  that may have overwritten files you submitted (but should not have).
+Invoking gcc...
+ASMParser.c: In function ‘parseASM’:
+ASMParser.c:132:23: warning: unused variable ‘rd’ [-Wunused-variable]
+       uint8_t rs, rt, rd;
+                       ^~
+ASMParser.c:163:23: warning: unused variable ‘rd’ [-Wunused-variable]
+       uint8_t rs, rt, rd;
+                       ^~
+In file included from ASMParser.c:32:
+At top level:
+register.h:33:12: warning: ‘registerTable’ defined but not used [-Wunused-variable]
+ static reg registerTable[8] = {
+            ^~~~~~~~~~~~~
+In file included from ASMParser.c:31:
+opCode.h:42:15: warning: ‘Opcode_table’ defined but not used [-Wunused-variable]
+ static opCode Opcode_table[6] = {
+               ^~~~~~~~~~~~
+
+============================================================

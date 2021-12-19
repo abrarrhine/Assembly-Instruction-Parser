@@ -1,0 +1,6 @@
+Valgrind issues:
+==1162369==     in use at exit: 0 bytes in 0 blocks
+==1162369==   total heap usage: 557 allocs, 557 frees, 37,981 bytes allocated
+Invalid reads: 0
+Invalid writes: 0
+Uses of uninitialized values: 0

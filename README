@@ -1,0 +1,71 @@
+After unpacking the posted tar file, you should find the following files:
+
+   README              - usage instructions (this file)
+   ./dev               - directory for implementing your solution
+      c01driver.c         - test driver
+      ASMParser.h         - supplied C header file; do not modify!
+      ASMParser.c         - file for implementing the ASMParser module
+      ParseResult.h       - supplied C header file; do not modify! 
+      ParseResult.c       - file for implementing the ParseResult module
+      Grade.h             - declaration for grading function; do not modify!
+      Grade.o             - 64-bit CentOS binary for grading function 
+      Generate.h          - declaration for test data generator; do not modify!
+      Generate.o          - 64-bit CentOS binary for test data generator
+   ./grading              - directory for running the grading code
+      gradeC01.sh         - script file that runs the testing process; read the header comment!
+      c01Grader.tar       - grading code, including:
+         c01driver.c      - test driver
+         ASMParser.h      - supplied C header file 
+         ParseResult.h    - supplied C header file
+         Grade.h          - declaration for grading function
+         Grade.o          - 64-bit CentOS binary for grading function 
+         Generate.h       - declaration for test data generator
+         Generate.o       - 64-bit CentOS binary for test data generator
+
+Manual Testing
+----------------------------------------------------------------------------
+For manual testing (especially if you want to use gdb), in ./dev:
+    - edit ASMParser.c and ParseResult.c as needed
+    - compile your files with the grading harness:
+        gcc -o c01driver -std=c11 -Wall -W -ggdb3 c01driver.c ASMParser.c ParseResult.c <names of your other .c files, if any> Generate.o Grader.o
+    - execute the test driver:  
+        ./c01driver <name for test data file> <name for results file>
+
+This will create new test data and graded results.  See the results file
+for details.  
+
+The test driver randomizes the test cases.  If you want to reuse the previous
+set of test cases, look in the results file from the previous test and find 
+the line that lists the random seed value that was used:
+
+Seed value: 1579713594
+
+Then, run the test driver this way:
+        ./c01driver <name for test data file> <name for results file> -seed <seed value>
+
+
+Automated Testing
+----------------------------------------------------------------------------
+To use the automated grading package in ./grading:
+    - create a tar file containing your ASMParser.c and ParseResult.c
+        files and nothing else; copy that tar file into ./grading
+    - if necessary, run chmod a+x to make the script gradeC01.sh executable
+    - execute the grading script:
+         gradeC01.sh <name of your tar file>
+
+The grading script will extract the first token from the name of your zip
+file and use that in naming the generated report file.  We recommend that
+you name your tar file PID.tar, where PID is your VT email PID, since 
+that is the naming convention used when you submit your solution to us
+for grading.    
+
+Watch the terminal window for any error messages from the script.  Check
+the file PID.txt for grading results; if that file was not created (due
+to some irrecoverable error), check the other text files created by the
+grading process.
+
+If you get an error message about the build failing, then your tar file 
+is defective or your source code is defective.
+
+If you get any other error messages, you need to diagnose the error and
+fix the problem.

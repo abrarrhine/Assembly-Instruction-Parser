@@ -1,0 +1,745 @@
+Grading:  assemblyparser.tar
+Time:     Sun Dec 19 07:37:26 EST 2021
+
+>>Scores from testing<<
+Total score:  1500/1500
+
+============================================================
+Valgrind issues:
+==1162369==     in use at exit: 0 bytes in 0 blocks
+==1162369==   total heap usage: 557 allocs, 557 frees, 37,981 bytes allocated
+Invalid reads: 0
+Invalid writes: 0
+Uses of uninitialized values: 0
+============================================================
+Test instructions:
+
+addi      $t2,  $t2,  9025
+lw        $s2,  -10300($t3)
+sub       $s1,  $s3,  $t2
+mul       $s3,  $s3,  $s1
+lui       $t3,  -14640
+mult      $t2,  $s1
+lw        $t1,  1014($t0)
+mul       $s0,  $s0,  $s3
+mul       $s2,  $s3,  $s0
+addi      $t3,  $t3,  -8241
+mul       $t3,  $t0,  $t1
+addi      $s1,  $s0,  -15781
+lw        $t0,  8179($t0)
+sub       $t3,  $s0,  $t3
+lw        $t1,  -5263($t0)
+addi      $s2,  $t3,  -15264
+mul       $t1,  $t2,  $t0
+mult      $t2,  $t1
+mult      $s3,  $s2
+lui       $s1,  -1492
+sub       $s3,  $s0,  $s2
+sub       $t0,  $t2,  $t3
+mult      $t2,  $t2
+lw        $t0,  -2683($t0)
+lui       $t1,  12986
+============================================================
+Grading details:
+Seed value: 1639917446
+
+Test case 1:
+Testing with:  addi      $t2,  $t2,  9025
+Student answer:
+ASMInstruction: addi      $t2,  $t2,  9025
+   Mnemonic:  addi
+   Opcode:    001000
+   RD:        NULL
+   rd:         0
+   rdName:    NULL
+   RS:        01010
+   rs:        10
+   rsName:    $t2
+   RT:        01010
+   rt:        10
+   rtName:    $t2
+   Funct:     NULL
+   IMM:       0010001101000001
+   Imm:       9025
+Score for this analysis: 60 / 60
+
+Test case 2:
+Testing with:  lw        $s2,  -10300($t3)
+Student answer:
+ASMInstruction: lw        $s2,  -10300($t3)
+   Mnemonic:  lw
+   Opcode:    100011
+   RD:        NULL
+   rd:         0
+   rdName:    NULL
+   RS:        01011
+   rs:        11
+   rsName:    $t3
+   RT:        10010
+   rt:        18
+   rtName:    $s2
+   Funct:     NULL
+   IMM:       1101011111000100
+   Imm:       -10300
+Score for this analysis: 60 / 60
+
+Test case 3:
+Testing with:  sub       $s1,  $s3,  $t2
+Student answer:
+ASMInstruction: sub       $s1,  $s3,  $t2
+   Mnemonic:  sub
+   Opcode:    000000
+   RD:        10001
+   rd:        17
+   rdName:    $s1
+   RS:        10011
+   rs:        19
+   rsName:    $s3
+   RT:        01010
+   rt:        10
+   rtName:    $t2
+   Funct:     100010
+   IMM:       NULL
+   Imm:       0
+Score for this analysis: 60 / 60
+
+Test case 4:
+Testing with:  mul       $s3,  $s3,  $s1
+Student answer:
+ASMInstruction: mul       $s3,  $s3,  $s1
+   Mnemonic:  mul
+   Opcode:    011100
+   RD:        10011
+   rd:        19
+   rdName:    $s3
+   RS:        10011
+   rs:        19
+   rsName:    $s3
+   RT:        10001
+   rt:        17
+   rtName:    $s1
+   Funct:     000010
+   IMM:       NULL
+   Imm:       0
+Score for this analysis: 60 / 60
+
+Test case 5:
+Testing with:  lui       $t3,  -14640
+Student answer:
+ASMInstruction: lui       $t3,  -14640
+   Mnemonic:  lui
+   Opcode:    001111
+   RD:        NULL
+   rd:         0
+   rdName:    NULL
+   RS:        00000
+   rs:         0
+   rsName:    NULL
+   RT:        01011
+   rt:        11
+   rtName:    $t3
+   Funct:     NULL
+   IMM:       1100011011010000
+   Imm:       -14640
+Score for this analysis: 60 / 60
+
+Test case 6:
+Testing with:  mult      $t2,  $s1
+Student answer:
+ASMInstruction: mult      $t2,  $s1
+   Mnemonic:  mult
+   Opcode:    000000
+   RD:        00000
+   rd:         0
+   rdName:    NULL
+   RS:        01010
+   rs:        10
+   rsName:    $t2
+   RT:        10001
+   rt:        17
+   rtName:    $s1
+   Funct:     011000
+   IMM:       NULL
+   Imm:       0
+Score for this analysis: 60 / 60
+
+Test case 7:
+Testing with:  lw        $t1,  1014($t0)
+Student answer:
+ASMInstruction: lw        $t1,  1014($t0)
+   Mnemonic:  lw
+   Opcode:    100011
+   RD:        NULL
+   rd:         0
+   rdName:    NULL
+   RS:        01000
+   rs:         8
+   rsName:    $t0
+   RT:        01001
+   rt:         9
+   rtName:    $t1
+   Funct:     NULL
+   IMM:       0000001111110110
+   Imm:       1014
+Score for this analysis: 60 / 60
+
+Test case 8:
+Testing with:  mul       $s0,  $s0,  $s3
+Student answer:
+ASMInstruction: mul       $s0,  $s0,  $s3
+   Mnemonic:  mul
+   Opcode:    011100
+   RD:        10000
+   rd:        16
+   rdName:    $s0
+   RS:        10000
+   rs:        16
+   rsName:    $s0
+   RT:        10011
+   rt:        19
+   rtName:    $s3
+   Funct:     000010
+   IMM:       NULL
+   Imm:       0
+Score for this analysis: 60 / 60
+
+Test case 9:
+Testing with:  mul       $s2,  $s3,  $s0
+Student answer:
+ASMInstruction: mul       $s2,  $s3,  $s0
+   Mnemonic:  mul
+   Opcode:    011100
+   RD:        10010
+   rd:        18
+   rdName:    $s2
+   RS:        10011
+   rs:        19
+   rsName:    $s3
+   RT:        10000
+   rt:        16
+   rtName:    $s0
+   Funct:     000010
+   IMM:       NULL
+   Imm:       0
+Score for this analysis: 60 / 60
+
+Test case 10:
+Testing with:  addi      $t3,  $t3,  -8241
+Student answer:
+ASMInstruction: addi      $t3,  $t3,  -8241
+   Mnemonic:  addi
+   Opcode:    001000
+   RD:        NULL
+   rd:         0
+   rdName:    NULL
+   RS:        01011
+   rs:        11
+   rsName:    $t3
+   RT:        01011
+   rt:        11
+   rtName:    $t3
+   Funct:     NULL
+   IMM:       1101111111001111
+   Imm:       -8241
+Score for this analysis: 60 / 60
+
+Test case 11:
+Testing with:  mul       $t3,  $t0,  $t1
+Student answer:
+ASMInstruction: mul       $t3,  $t0,  $t1
+   Mnemonic:  mul
+   Opcode:    011100
+   RD:        01011
+   rd:        11
+   rdName:    $t3
+   RS:        01000
+   rs:         8
+   rsName:    $t0
+   RT:        01001
+   rt:         9
+   rtName:    $t1
+   Funct:     000010
+   IMM:       NULL
+   Imm:       0
+Score for this analysis: 60 / 60
+
+Test case 12:
+Testing with:  addi      $s1,  $s0,  -15781
+Student answer:
+ASMInstruction: addi      $s1,  $s0,  -15781
+   Mnemonic:  addi
+   Opcode:    001000
+   RD:        NULL
+   rd:         0
+   rdName:    NULL
+   RS:        10000
+   rs:        16
+   rsName:    $s0
+   RT:        10001
+   rt:        17
+   rtName:    $s1
+   Funct:     NULL
+   IMM:       1100001001011011
+   Imm:       -15781
+Score for this analysis: 60 / 60
+
+Test case 13:
+Testing with:  lw        $t0,  8179($t0)
+Student answer:
+ASMInstruction: lw        $t0,  8179($t0)
+   Mnemonic:  lw
+   Opcode:    100011
+   RD:        NULL
+   rd:         0
+   rdName:    NULL
+   RS:        01000
+   rs:         8
+   rsName:    $t0
+   RT:        01000
+   rt:         8
+   rtName:    $t0
+   Funct:     NULL
+   IMM:       0001111111110011
+   Imm:       8179
+Score for this analysis: 60 / 60
+
+Test case 14:
+Testing with:  sub       $t3,  $s0,  $t3
+Student answer:
+ASMInstruction: sub       $t3,  $s0,  $t3
+   Mnemonic:  sub
+   Opcode:    000000
+   RD:        01011
+   rd:        11
+   rdName:    $t3
+   RS:        10000
+   rs:        16
+   rsName:    $s0
+   RT:        01011
+   rt:        11
+   rtName:    $t3
+   Funct:     100010
+   IMM:       NULL
+   Imm:       0
+Score for this analysis: 60 / 60
+
+Test case 15:
+Testing with:  lw        $t1,  -5263($t0)
+Student answer:
+ASMInstruction: lw        $t1,  -5263($t0)
+   Mnemonic:  lw
+   Opcode:    100011
+   RD:        NULL
+   rd:         0
+   rdName:    NULL
+   RS:        01000
+   rs:         8
+   rsName:    $t0
+   RT:        01001
+   rt:         9
+   rtName:    $t1
+   Funct:     NULL
+   IMM:       1110101101110001
+   Imm:       -5263
+Score for this analysis: 60 / 60
+
+Test case 16:
+Testing with:  addi      $s2,  $t3,  -15264
+Student answer:
+ASMInstruction: addi      $s2,  $t3,  -15264
+   Mnemonic:  addi
+   Opcode:    001000
+   RD:        NULL
+   rd:         0
+   rdName:    NULL
+   RS:        01011
+   rs:        11
+   rsName:    $t3
+   RT:        10010
+   rt:        18
+   rtName:    $s2
+   Funct:     NULL
+   IMM:       1100010001100000
+   Imm:       -15264
+Score for this analysis: 60 / 60
+
+Test case 17:
+Testing with:  mul       $t1,  $t2,  $t0
+Student answer:
+ASMInstruction: mul       $t1,  $t2,  $t0
+   Mnemonic:  mul
+   Opcode:    011100
+   RD:        01001
+   rd:         9
+   rdName:    $t1
+   RS:        01010
+   rs:        10
+   rsName:    $t2
+   RT:        01000
+   rt:         8
+   rtName:    $t0
+   Funct:     000010
+   IMM:       NULL
+   Imm:       0
+Score for this analysis: 60 / 60
+
+Test case 18:
+Testing with:  mult      $t2,  $t1
+Student answer:
+ASMInstruction: mult      $t2,  $t1
+   Mnemonic:  mult
+   Opcode:    000000
+   RD:        00000
+   rd:         0
+   rdName:    NULL
+   RS:        01010
+   rs:        10
+   rsName:    $t2
+   RT:        01001
+   rt:         9
+   rtName:    $t1
+   Funct:     011000
+   IMM:       NULL
+   Imm:       0
+Score for this analysis: 60 / 60
+
+Test case 19:
+Testing with:  mult      $s3,  $s2
+Student answer:
+ASMInstruction: mult      $s3,  $s2
+   Mnemonic:  mult
+   Opcode:    000000
+   RD:        00000
+   rd:         0
+   rdName:    NULL
+   RS:        10011
+   rs:        19
+   rsName:    $s3
+   RT:        10010
+   rt:        18
+   rtName:    $s2
+   Funct:     011000
+   IMM:       NULL
+   Imm:       0
+Score for this analysis: 60 / 60
+
+Test case 20:
+Testing with:  lui       $s1,  -1492
+Student answer:
+ASMInstruction: lui       $s1,  -1492
+   Mnemonic:  lui
+   Opcode:    001111
+   RD:        NULL
+   rd:         0
+   rdName:    NULL
+   RS:        00000
+   rs:         0
+   rsName:    NULL
+   RT:        10001
+   rt:        17
+   rtName:    $s1
+   Funct:     NULL
+   IMM:       1111101000101100
+   Imm:       -1492
+Score for this analysis: 60 / 60
+
+Test case 21:
+Testing with:  sub       $s3,  $s0,  $s2
+Student answer:
+ASMInstruction: sub       $s3,  $s0,  $s2
+   Mnemonic:  sub
+   Opcode:    000000
+   RD:        10011
+   rd:        19
+   rdName:    $s3
+   RS:        10000
+   rs:        16
+   rsName:    $s0
+   RT:        10010
+   rt:        18
+   rtName:    $s2
+   Funct:     100010
+   IMM:       NULL
+   Imm:       0
+Score for this analysis: 60 / 60
+
+Test case 22:
+Testing with:  sub       $t0,  $t2,  $t3
+Student answer:
+ASMInstruction: sub       $t0,  $t2,  $t3
+   Mnemonic:  sub
+   Opcode:    000000
+   RD:        01000
+   rd:         8
+   rdName:    $t0
+   RS:        01010
+   rs:        10
+   rsName:    $t2
+   RT:        01011
+   rt:        11
+   rtName:    $t3
+   Funct:     100010
+   IMM:       NULL
+   Imm:       0
+Score for this analysis: 60 / 60
+
+Test case 23:
+Testing with:  mult      $t2,  $t2
+Student answer:
+ASMInstruction: mult      $t2,  $t2
+   Mnemonic:  mult
+   Opcode:    000000
+   RD:        00000
+   rd:         0
+   rdName:    NULL
+   RS:        01010
+   rs:        10
+   rsName:    $t2
+   RT:        01010
+   rt:        10
+   rtName:    $t2
+   Funct:     011000
+   IMM:       NULL
+   Imm:       0
+Score for this analysis: 60 / 60
+
+Test case 24:
+Testing with:  lw        $t0,  -2683($t0)
+Student answer:
+ASMInstruction: lw        $t0,  -2683($t0)
+   Mnemonic:  lw
+   Opcode:    100011
+   RD:        NULL
+   rd:         0
+   rdName:    NULL
+   RS:        01000
+   rs:         8
+   rsName:    $t0
+   RT:        01000
+   rt:         8
+   rtName:    $t0
+   Funct:     NULL
+   IMM:       1111010110000101
+   Imm:       -2683
+Score for this analysis: 60 / 60
+
+Test case 25:
+Testing with:  lui       $t1,  12986
+Student answer:
+ASMInstruction: lui       $t1,  12986
+   Mnemonic:  lui
+   Opcode:    001111
+   RD:        NULL
+   rd:         0
+   rdName:    NULL
+   RS:        00000
+   rs:         0
+   rsName:    NULL
+   RT:        01001
+   rt:         9
+   rtName:    $t1
+   Funct:     NULL
+   IMM:       0011001010111010
+   Imm:       12986
+Score for this analysis: 60 / 60
+
+Scores:
+  Test  1:   60/60
+  Test  2:   60/60
+  Test  3:   60/60
+  Test  4:   60/60
+  Test  5:   60/60
+  Test  6:   60/60
+  Test  7:   60/60
+  Test  8:   60/60
+  Test  9:   60/60
+  Test 10:   60/60
+  Test 11:   60/60
+  Test 12:   60/60
+  Test 13:   60/60
+  Test 14:   60/60
+  Test 15:   60/60
+  Test 16:   60/60
+  Test 17:   60/60
+  Test 18:   60/60
+  Test 19:   60/60
+  Test 20:   60/60
+  Test 21:   60/60
+  Test 22:   60/60
+  Test 23:   60/60
+  Test 24:   60/60
+  Test 25:   60/60
+
+Total score:  1500/1500
+============================================================
+Output from executing test driver:
+Executing the test driver...
+
+1639917446
+
+============================================================
+==1162369== Memcheck, a memory error detector
+==1162369== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1162369== Using Valgrind-3.18.1-42b08ed5bd-20211015 and LibVEX; rerun with -h for copyright info
+==1162369== Command: ./assemblyparser_c01 tests.txt ScoresValgrind.txt
+==1162369== Parent PID: 1162340
+==1162369== 
+--1162369-- 
+--1162369-- Valgrind options:
+--1162369--    --leak-check=full
+--1162369--    --show-leak-kinds=all
+--1162369--    --log-file=vgrindLog.txt
+--1162369--    --track-origins=yes
+--1162369--    -v
+--1162369-- Contents of /proc/version:
+--1162369--   Linux version 4.18.0-348.2.1.el8_5.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 8.5.0 20210514 (Red Hat 8.5.0-4) (GCC)) #1 SMP Tue Nov 16 14:42:35 UTC 2021
+--1162369-- 
+--1162369-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed
+--1162369-- Page sizes: currently 4096, max supported 4096
+--1162369-- Valgrind library directory: /usr/libexec/valgrind
+--1162369-- Reading syms from /home/ugrads/majors/abrarr18/AssemblyParser/grading/assemblyparser_c01
+--1162369-- Reading syms from /usr/lib64/ld-2.28.so
+--1162369-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--1162369--    object doesn't have a symbol table
+--1162369--    object doesn't have a dynamic symbol table
+--1162369-- Scheduler: using generic scheduler lock implementation.
+--1162369-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==1162369== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-1162369-by-abrarr18-on-chestnut.rlogin
+==1162369== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-1162369-by-abrarr18-on-chestnut.rlogin
+==1162369== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-1162369-by-abrarr18-on-chestnut.rlogin
+==1162369== 
+==1162369== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==1162369== don't want to do, unless you know exactly what you're doing,
+==1162369== or are doing some strange experiment):
+==1162369==   /usr/libexec/valgrind/../../bin/vgdb --pid=1162369 ...command...
+==1162369== 
+==1162369== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==1162369==   /path/to/gdb ./assemblyparser_c01
+==1162369== and then give GDB the following command
+==1162369==   target remote | /usr/libexec/valgrind/../../bin/vgdb --pid=1162369
+==1162369== --pid is optional if only one valgrind process is running
+==1162369== 
+--1162369-- REDIR: 0x4005870 (ld-linux-x86-64.so.2:strlen) redirected to 0x580d0482 (???)
+--1162369-- REDIR: 0x4005640 (ld-linux-x86-64.so.2:index) redirected to 0x580d049c (???)
+--1162369-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--1162369-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==1162369== WARNING: new redirection conflicts with existing -- ignoring it
+--1162369--     old: 0x04005870 (strlen              ) R-> (0000.0) 0x580d0482 ???
+--1162369--     new: 0x04005870 (strlen              ) R-> (2007.0) 0x04c3b170 strlen
+--1162369-- REDIR: 0x4002050 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c3c250 (strcmp)
+--1162369-- REDIR: 0x4005dd0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c40180 (mempcpy)
+--1162369-- Reading syms from /usr/lib64/libm-2.28.so
+--1162369-- Reading syms from /usr/lib64/libc-2.28.so
+==1162369== WARNING: new redirection conflicts with existing -- ignoring it
+--1162369--     old: 0x05264360 (memalign            ) R-> (1011.0) 0x04c3a3e2 memalign
+--1162369--     new: 0x05264360 (memalign            ) R-> (1017.0) 0x04c3a3b5 aligned_alloc
+==1162369== WARNING: new redirection conflicts with existing -- ignoring it
+--1162369--     old: 0x05264360 (memalign            ) R-> (1011.0) 0x04c3a3e2 memalign
+--1162369--     new: 0x05264360 (memalign            ) R-> (1017.0) 0x04c3a388 aligned_alloc
+==1162369== WARNING: new redirection conflicts with existing -- ignoring it
+--1162369--     old: 0x05264360 (memalign            ) R-> (1011.0) 0x04c3a3e2 memalign
+--1162369--     new: 0x05264360 (memalign            ) R-> (1017.0) 0x04c3a3b5 aligned_alloc
+==1162369== WARNING: new redirection conflicts with existing -- ignoring it
+--1162369--     old: 0x05264360 (memalign            ) R-> (1011.0) 0x04c3a3e2 memalign
+--1162369--     new: 0x05264360 (memalign            ) R-> (1017.0) 0x04c3a388 aligned_alloc
+--1162369-- REDIR: 0x52685e0 (libc.so.6:memmove) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+==1162369== Preferring higher priority redirection:
+--1162369--     old: 0x05296c90 (__memcpy_avx_unalign) R-> (2018.0) 0x04c3d690 __memcpy_avx_unaligned_erms
+--1162369--     new: 0x05296c90 (__memcpy_avx_unalign) R-> (2018.1) 0x04c3f1c0 memmove
+--1162369-- REDIR: 0x52678f0 (libc.so.6:strncpy) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5268910 (libc.so.6:strcasecmp) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5267200 (libc.so.6:strcat) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5267950 (libc.so.6:rindex) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5269f40 (libc.so.6:rawmemchr) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x529fb20 (libc.so.6:wmemchr) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x529f540 (libc.so.6:wcscmp) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5268740 (libc.so.6:mempcpy) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5268570 (libc.so.6:bcmp) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5267880 (libc.so.6:strncmp) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x52672b0 (libc.so.6:strcmp) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x52686b0 (libc.so.6:memset) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x529f500 (libc.so.6:wcschr) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x52677e0 (libc.so.6:strnlen) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5267390 (libc.so.6:strcspn) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5268960 (libc.so.6:strncasecmp) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5267330 (libc.so.6:strcpy) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5268ab0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x52a0e20 (libc.so.6:wcsnlen) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5267990 (libc.so.6:strpbrk) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5267260 (libc.so.6:index) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x52677a0 (libc.so.6:strlen) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x526ea20 (libc.so.6:memrchr) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x52689b0 (libc.so.6:strcasecmp_l) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5268530 (libc.so.6:memchr) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x529f650 (libc.so.6:wcslen) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5267c50 (libc.so.6:strspn) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x52688b0 (libc.so.6:stpncpy) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5268850 (libc.so.6:stpcpy) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5269f80 (libc.so.6:strchrnul) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5268a00 (libc.so.6:strncasecmp_l) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--1162369-- REDIR: 0x5293ab0 (libc.so.6:__strrchr_avx2) redirected to 0x4c3ab00 (rindex)
+--1162369-- REDIR: 0x5263660 (libc.so.6:malloc) redirected to 0x4c350bf (malloc)
+--1162369-- REDIR: 0x5268160 (libc.so.6:__GI_strstr) redirected to 0x4c403e0 (__strstr_sse2)
+--1162369-- REDIR: 0x52938c0 (libc.so.6:__strchrnul_avx2) redirected to 0x4c3fcb0 (strchrnul)
+--1162369-- REDIR: 0x5293c80 (libc.so.6:__strlen_avx2) redirected to 0x4c3b050 (strlen)
+--1162369-- REDIR: 0x5296c70 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4c3fdc0 (mempcpy)
+--1162369-- REDIR: 0x5263cb0 (libc.so.6:free) redirected to 0x4c37a21 (free)
+--1162369-- REDIR: 0x528fae0 (libc.so.6:__memchr_avx2) redirected to 0x4c3c2f0 (memchr)
+--1162369-- REDIR: 0x5296c90 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x4c3f1c0 (memmove)
+--1162369-- REDIR: 0x5264420 (libc.so.6:calloc) redirected to 0x4c39dc1 (calloc)
+--1162369-- REDIR: 0x52951c0 (libc.so.6:__strcpy_avx2) redirected to 0x4c3b1a0 (strcpy)
+--1162369-- REDIR: 0x5294140 (libc.so.6:__strcat_avx2) redirected to 0x4c3ad10 (strcat)
+--1162369-- REDIR: 0x529e480 (libc.so.6:__strspn_sse42) redirected to 0x4c405f0 (strspn)
+--1162369-- REDIR: 0x529e1c0 (libc.so.6:__strcspn_sse42) redirected to 0x4c40530 (strcspn)
+--1162369-- REDIR: 0x528f170 (libc.so.6:__strcmp_avx2) redirected to 0x4c3c110 (strcmp)
+--1162369-- REDIR: 0x5295550 (libc.so.6:__strncpy_avx2) redirected to 0x4c3b340 (strncpy)
+--1162369-- REDIR: 0x528f5b0 (libc.so.6:__strncmp_avx2) redirected to 0x4c3b800 (strncmp)
+==1162369== 
+==1162369== HEAP SUMMARY:
+==1162369==     in use at exit: 0 bytes in 0 blocks
+==1162369==   total heap usage: 557 allocs, 557 frees, 37,981 bytes allocated
+==1162369== 
+==1162369== All heap blocks were freed -- no leaks are possible
+==1162369== 
+==1162369== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+============================================================
+Output from build process:
+Executing gradeC02.sh...
+
+Creating build subdirectory
+
+Copying student source file to tempFiles:
+ASMParser.c
+ParseResult.c
+opCode.c
+opCode.h
+register.c
+register.h
+Unpacking the grading code to the build directory:
+ASMParser.h
+ParseResult.h
+c01driver.c
+Grader.h
+Grader.o
+Generate.h
+Generate.o
+Note:  that may have overwritten files you submitted (but should not have).
+Invoking gcc...
+ASMParser.c: In function ‘parseASM’:
+ASMParser.c:132:23: warning: unused variable ‘rd’ [-Wunused-variable]
+       uint8_t rs, rt, rd;
+                       ^~
+ASMParser.c:163:23: warning: unused variable ‘rd’ [-Wunused-variable]
+       uint8_t rs, rt, rd;
+                       ^~
+In file included from ASMParser.c:32:
+At top level:
+register.h:33:12: warning: ‘registerTable’ defined but not used [-Wunused-variable]
+ static reg registerTable[8] = {
+            ^~~~~~~~~~~~~
+In file included from ASMParser.c:31:
+opCode.h:42:15: warning: ‘Opcode_table’ defined but not used [-Wunused-variable]
+ static opCode Opcode_table[6] = {
+               ^~~~~~~~~~~~
+
+============================================================

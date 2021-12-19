@@ -1,0 +1,25 @@
+addi      $t2,  $t2,  9025
+lw        $s2,  -10300($t3)
+sub       $s1,  $s3,  $t2
+mul       $s3,  $s3,  $s1
+lui       $t3,  -14640
+mult      $t2,  $s1
+lw        $t1,  1014($t0)
+mul       $s0,  $s0,  $s3
+mul       $s2,  $s3,  $s0
+addi      $t3,  $t3,  -8241
+mul       $t3,  $t0,  $t1
+addi      $s1,  $s0,  -15781
+lw        $t0,  8179($t0)
+sub       $t3,  $s0,  $t3
+lw        $t1,  -5263($t0)
+addi      $s2,  $t3,  -15264
+mul       $t1,  $t2,  $t0
+mult      $t2,  $t1
+mult      $s3,  $s2
+lui       $s1,  -1492
+sub       $s3,  $s0,  $s2
+sub       $t0,  $t2,  $t3
+mult      $t2,  $t2
+lw        $t0,  -2683($t0)
+lui       $t1,  12986
